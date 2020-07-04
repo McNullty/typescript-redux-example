@@ -15,6 +15,9 @@ export function NavTab() {
                     <li className={"nav-item"}>
                     </li>
                     <li>
+                        <Link className={"nav-link"} to="/echo/changeMe">Echo</Link>
+                    </li>
+                    <li>
                         <Link className={"nav-link"} to="/about">About</Link>
                     </li>
                     <li>

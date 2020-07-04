@@ -1,14 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import {Counter} from './features/counter/Counter';
 import './App.css';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {NavTab} from "./features/navigation/NavTab";
+import {Echo} from "./features/echo/Echo";
 
 function Home() {
     return <h2>Home</h2>;
@@ -84,6 +81,9 @@ function App() {
                     </Route>
                     <Route path="/counter">
                         <CounterPage />
+                    </Route>
+                    <Route path="/echo/:message">
+                        <Echo />
                     </Route>
                     <Route path="/">
                         <Home />
