@@ -6,4 +6,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-To learn React Route, check out the [React Route documentation](https://reacttraining.com/react-router/web/guides/deep-redux-integration)
+To learn React Route, check out the [React Route documentation](https://reactrouter.com/web/guides/quick-start)
