@@ -23,6 +23,9 @@ export function NavTab() {
                     <li>
                         <NavLink activeClassName="active" className={"nav-link"} to="/counter">Counter</NavLink>
                     </li>
+                    <li>
+                        <NavLink activeClassName="active" className={"nav-link"} to="/redirect">Redirect</NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import {Counter} from './features/counter/Counter';
 import './App.css';
 
-import {BrowserRouter as Router, Route, Switch, useLocation} from "react-router-dom";
+import {BrowserRouter as Router, Redirect, Route, Switch, useLocation} from "react-router-dom";
 import {NavTab} from "./features/navigation/NavTab";
 import {Echo} from "./features/echo/Echo";
 
@@ -94,6 +94,7 @@ function App() {
                     <Route path="/counter">
                         <CounterPage />
                     </Route>
+                    <Redirect to="/counter" path="/redirect" />
                     <Route path="/" exact>
                         <Home />
                     </Route>
