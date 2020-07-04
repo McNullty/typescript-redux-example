@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import {Counter} from './features/counter/Counter';
 import './App.css';
 
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, useLocation} from "react-router-dom";
 import {NavTab} from "./features/navigation/NavTab";
 import {Echo} from "./features/echo/Echo";
 
@@ -67,6 +67,18 @@ function CounterPage() {
     );
 }
 
+function NoMatch() {
+    let location = useLocation();
+
+    return (
+        <div>
+            <h3>
+                No match for <code>{location.pathname}</code>
+            </h3>
+        </div>
+    );
+}
+
 function App() {
     return (
         <Router>
@@ -87,6 +99,9 @@ function App() {
                     </Route>
                     <Route path="/echo/:message">
                         <Echo />
+                    </Route>
+                    <Route path="*">
+                        <NoMatch />
                     </Route>
                 </Switch>
             </div>
