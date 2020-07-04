@@ -1,10 +1,10 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import React from "react";
 
 export function NavTab() {
     return (
         <nav className={"navbar navbar-expand-lg navbar-light bg-light"}>
-            <Link className={"navbar-brand"} to="/">Home</Link>
+            <NavLink activeClassName="active" className={"navbar-brand"} to="/">Home</NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"/>
@@ -15,13 +15,13 @@ export function NavTab() {
                     <li className={"nav-item"}>
                     </li>
                     <li>
-                        <Link className={"nav-link"} to="/echo/changeMe">Echo</Link>
+                        <NavLink activeClassName="active" className={"nav-link"} to="/echo/changeMe">Echo</NavLink>
                     </li>
                     <li>
-                        <Link className={"nav-link"} to="/about">About</Link>
+                        <NavLink activeClassName="active" className={"nav-link"} to="/about">About</NavLink>
                     </li>
                     <li>
-                        <Link className={"nav-link"} to="/counter">Counter</Link>
+                        <NavLink activeClassName="active" className={"nav-link"} to="/counter">Counter</NavLink>
                     </li>
                 </ul>
             </div>
