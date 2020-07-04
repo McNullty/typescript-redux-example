@@ -82,11 +82,11 @@ function App() {
                     <Route path="/counter">
                         <CounterPage />
                     </Route>
+                    <Route path="/" exact>
+                        <Home />
+                    </Route>
                     <Route path="/echo/:message">
                         <Echo />
-                    </Route>
-                    <Route path="/">
-                        <Home />
                     </Route>
                 </Switch>
             </div>
