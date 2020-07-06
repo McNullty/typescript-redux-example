@@ -7,3 +7,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 To learn React Route, check out the [React Route documentation](https://reactrouter.com/web/guides/quick-start)
+
+Instructions when to use redux store and when to use component store: [FAQ](https://redux.js.org/faq/organizing-state#do-i-have-to-put-all-my-state-into-redux-should-i-ever-use-reacts-setstate)
