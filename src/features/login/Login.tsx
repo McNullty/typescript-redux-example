@@ -13,7 +13,10 @@ export function Login() {
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <h2>Sign In</h2>
-                    <form>
+                    <form onSubmit={e => {
+                        e.preventDefault();
+                        dispatch(login(cred));
+                    }}>
                         <fieldset>
                             <fieldset className="form-group">
                                 <input
@@ -34,9 +37,8 @@ export function Login() {
                                 />
                             </fieldset>
                             <button
-                                type="button"
+                                type="submit"
                                 className="btn btn-primary float-right"
-                                onClick={() => {dispatch(login(cred))}}
                             >Sign in</button>
                         </fieldset>
                     </form>
