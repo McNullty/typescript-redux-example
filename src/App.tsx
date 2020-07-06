@@ -6,6 +6,7 @@ import './App.css';
 import {BrowserRouter as Router, Redirect, Route, Switch, useLocation} from "react-router-dom";
 import {NavTab} from "./features/navigation/NavTab";
 import {Echo} from "./features/echo/Echo";
+import {Login} from "./features/login/Login";
 
 function Home() {
     return <h2>Home</h2>;
@@ -100,6 +101,9 @@ function App() {
                     </Route>
                     <Route path="/echo/:message">
                         <Echo />
+                    </Route>
+                    <Route path="/login">
+                        <Login />
                     </Route>
                     <Route path="*">
                         <NoMatch />

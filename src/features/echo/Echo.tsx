@@ -11,5 +11,5 @@ export function Echo() {
                 <h4>Message: {message}</h4>
             </div>
         </div>
-);
+    );
 }
