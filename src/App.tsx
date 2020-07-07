@@ -7,6 +7,8 @@ import {BrowserRouter as Router, Redirect, Route, Switch, useLocation} from "rea
 import {NavTab} from "./features/navigation/NavTab";
 import {Echo} from "./features/echo/Echo";
 import {Login} from "./features/login/Login";
+import {useSelector} from "react-redux";
+import {RootState} from "./app/store";
 
 const Home: React.FC = () => {
     return <h2>Home</h2>;
@@ -80,6 +82,29 @@ const NoMatch: React.FC = () => {
     );
 }
 
+function PrivateRoute({ children, ...rest }) {
+    const {isAuthenticated} = useSelector(
+        (state: RootState) => state.login
+    )
+    return (
+        <Route
+            {...rest}
+            render={({ location }) =>
+                isAuthenticated ? (
+                    children
+                ) : (
+                    <Redirect
+                        to={{
+                            pathname: "/login",
+                            state: { from: location }
+                        }}
+                    />
+                )
+            }
+        />
+    );
+}
+
 const App: React.FC = () =>  {
     return (
         <Router>
@@ -105,6 +130,9 @@ const App: React.FC = () =>  {
                     <Route path="/login">
                         <Login />
                     </Route>
+                    <PrivateRoute path="/protected">
+                        <CounterPage />
+                    </PrivateRoute>
                     <Route path="*">
                         <NoMatch />
                     </Route>

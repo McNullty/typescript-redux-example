@@ -26,6 +26,12 @@ export const NavTab: React.FC = () => {
         </li>
     ) : null;
 
+    let privatePage = isAuthenticated ? (
+        <li>
+            <NavLink activeClassName="active" className="nav-link" to="/private">Private</NavLink>
+        </li>
+    ) : null;
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink activeClassName="active" className="navbar-brand" to="/">Home</NavLink>
@@ -50,6 +56,7 @@ export const NavTab: React.FC = () => {
                     <li>
                         <NavLink activeClassName="active" className="nav-link" to="/redirect">Redirect</NavLink>
                     </li>
+                    {privatePage}
                     {signIn}
                     {signOut}
                 </ul>
