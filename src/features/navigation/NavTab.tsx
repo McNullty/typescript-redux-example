@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
 
-export function NavTab() {
+export const NavTab: React.FC = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink activeClassName="active" className="navbar-brand" to="/">Home</NavLink>

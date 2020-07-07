@@ -8,15 +8,15 @@ import {NavTab} from "./features/navigation/NavTab";
 import {Echo} from "./features/echo/Echo";
 import {Login} from "./features/login/Login";
 
-function Home() {
+const Home: React.FC = () => {
     return <h2>Home</h2>;
 }
 
-function About() {
+const About: React.FC = () => {
     return <h2>About</h2>;
 }
 
-function CounterPage() {
+const CounterPage: React.FC = () => {
     return (
         <div className="App">
             <header className="App-header">
@@ -68,7 +68,7 @@ function CounterPage() {
     );
 }
 
-function NoMatch() {
+const NoMatch: React.FC = () => {
     let location = useLocation();
 
     return (
@@ -80,7 +80,7 @@ function NoMatch() {
     );
 }
 
-function App() {
+const App: React.FC = () =>  {
     return (
         <Router>
             <div>

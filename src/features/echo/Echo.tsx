@@ -1,7 +1,7 @@
 import React from "react";
 import {useParams} from "react-router";
 
-export function Echo() {
+export const Echo: React.FC = () => {
     let { message } = useParams();
 
     return (
