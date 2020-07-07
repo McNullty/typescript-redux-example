@@ -15,7 +15,7 @@ export function Login() {
                     <h2>Sign In</h2>
                     <form onSubmit={e => {
                         e.preventDefault();
-                        dispatch(login(cred));
+                        dispatch(login(cred.email, cred.password));
                     }}>
                         <fieldset>
                             <fieldset className="form-group">
