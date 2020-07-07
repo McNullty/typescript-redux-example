@@ -1,12 +1,24 @@
 import React, {useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { login } from "./loginSlice";
+import {RootState} from "../../app/store";
 
-export function Login() {
+export const Login: React.FC = () => {
 
     const dispatch = useDispatch();
     const [cred, setCred] = useState({email: "" , password: "" });
 
+    const isLoading = useSelector(
+        (state: RootState) => state.login.isLoading
+    )
+
+    let spinner = isLoading ? (
+        <div className="d-flex justify-content-center" >
+            <div className="spinner-border text-primary" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
+        </div>
+    ) : null;
 
     return (
         <div className="container">
@@ -44,6 +56,7 @@ export function Login() {
                     </form>
                 </div>
             </div>
+            {spinner}
         </div>
     );
 }

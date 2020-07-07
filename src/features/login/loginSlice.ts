@@ -45,11 +45,12 @@ export const login = (email: string, password: string): AppThunk => async dispat
     try {
         dispatch(getLoginStart());
 
-        setTimeout(() => { }, 1000);
+
         if(password === "bad") {
             throw Error("Error in login");
         }
-        dispatch(getLoginSuccess(email));
+
+        setTimeout(() => { dispatch(getLoginSuccess(email)); }, 1000);
     } catch (err) {
         dispatch(getLoginFailure(err.toString()));
     }
