@@ -34,11 +34,15 @@ export const loginSlice = createSlice({
             state.isAuthenticated = false;
             state.isLoading = false;
             state.error = action.payload;
+        },
+        logout: (state ) => {
+            state.isAuthenticated = false;
+            state.username = "";
         }
     }
 });
 
-export const { getLoginStart, getLoginSuccess, getLoginFailure } = loginSlice.actions;
+export const { getLoginStart, getLoginSuccess, getLoginFailure, logout } = loginSlice.actions;
 
 export const login = (email: string, password: string): AppThunk => async dispatch => {
     try {

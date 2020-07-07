@@ -1,7 +1,31 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
+import {logout} from "../login/loginSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../app/store";
 
 export const NavTab: React.FC = () => {
+    const dispatch = useDispatch();
+
+    const {isAuthenticated} = useSelector(
+        (state: RootState) => state.login
+    )
+
+    let signIn = !isAuthenticated ? (
+        <li>
+            <NavLink activeClassName="active" className="nav-link" to="/login">Sign In</NavLink>
+        </li>
+    ) : null;
+
+    let signOut = isAuthenticated ? (
+        <li>
+            <a className="nav-link" onClick={e => {
+                e.preventDefault();
+                dispatch(logout());
+            }} href="/" >Sign Out</a>
+        </li>
+    ) : null;
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink activeClassName="active" className="navbar-brand" to="/">Home</NavLink>
@@ -26,9 +50,8 @@ export const NavTab: React.FC = () => {
                     <li>
                         <NavLink activeClassName="active" className="nav-link" to="/redirect">Redirect</NavLink>
                     </li>
-                    <li>
-                        <NavLink activeClassName="active" className="nav-link" to="/login">Sign In</NavLink>
-                    </li>
+                    {signIn}
+                    {signOut}
                 </ul>
             </div>
         </nav>
