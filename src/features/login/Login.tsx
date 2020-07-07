@@ -2,14 +2,15 @@ import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { login } from "./loginSlice";
 import {RootState} from "../../app/store";
+import {Redirect} from "react-router";
 
 export const Login: React.FC = () => {
 
     const dispatch = useDispatch();
     const [cred, setCred] = useState({email: "" , password: "" });
 
-    const isLoading = useSelector(
-        (state: RootState) => state.login.isLoading
+    const {isLoading, isAuthenticated } = useSelector(
+        (state: RootState) => state.login
     )
 
     let spinner = isLoading ? (
@@ -19,6 +20,10 @@ export const Login: React.FC = () => {
             </div>
         </div>
     ) : null;
+
+    if (isAuthenticated) {
+        return <Redirect to="/" />
+    }
 
     return (
         <div className="container">
