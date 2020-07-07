@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { login } from "./loginSlice";
 import {RootState} from "../../app/store";
-import {Redirect} from "react-router";
+import {Redirect, useHistory, useLocation} from "react-router";
 
 export const Login: React.FC = () => {
 
@@ -21,8 +21,18 @@ export const Login: React.FC = () => {
         </div>
     ) : null;
 
+    let location = useLocation();
+    let history = useHistory();
+
     if (isAuthenticated) {
-        return <Redirect to="/" />
+
+        let { from }: any = location.state || { from: { pathname: "/" } };
+
+        if(from) {
+            history.replace(from);
+        } else  {
+            return <Redirect to="/" />
+        }
     }
 
     return (

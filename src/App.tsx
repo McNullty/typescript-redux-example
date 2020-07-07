@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import {Counter} from './features/counter/Counter';
 import './App.css';
 
-import {BrowserRouter as Router, Redirect, Route, Switch, useLocation} from "react-router-dom";
+import {BrowserRouter as Router, Redirect, Route, RouteProps, Switch, useLocation} from "react-router-dom";
 import {NavTab} from "./features/navigation/NavTab";
 import {Echo} from "./features/echo/Echo";
 import {Login} from "./features/login/Login";
@@ -82,7 +82,12 @@ const NoMatch: React.FC = () => {
     );
 }
 
-function PrivateRoute({ children, ...rest }) {
+interface PrivateRouteProps extends RouteProps {
+    component?: any;
+    children?: any;
+}
+
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, ...rest }) => {
     const {isAuthenticated} = useSelector(
         (state: RootState) => state.login
     )

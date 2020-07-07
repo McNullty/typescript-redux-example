@@ -28,7 +28,7 @@ export const NavTab: React.FC = () => {
 
     let privatePage = isAuthenticated ? (
         <li>
-            <NavLink activeClassName="active" className="nav-link" to="/private">Private</NavLink>
+            <NavLink activeClassName="active" className="nav-link" to="/protected">Private</NavLink>
         </li>
     ) : null;
 
