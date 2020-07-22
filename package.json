@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash.throttle": "^4.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.4",
@@ -15,12 +23,6 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
-    "lodash.throttle": "^4.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
     "typescript": "^3.9.6"
   },
   "scripts": {
